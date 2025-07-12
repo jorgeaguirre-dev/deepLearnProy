@@ -1,5 +1,16 @@
-recortes.ipynb
-ImportMovieScript.py
-Jerry.Maguire.1996.Blu-ray.1080p.x264.HDBRiSe.SPA.srt
+# Some data file
 data/
+*.csv
+*.log
 drafts/
+*.txt
+*.xlsx
+*.srt
+*.json
+
+# Carpetas de Jupyter
+.ipynb_checkpoints/
+
+# environment files
+__pycache__/
+*.env
