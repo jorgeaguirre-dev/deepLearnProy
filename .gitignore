@@ -1,5 +1,16 @@
-recortes.ipynb
-ImportMovieScript.py
+# Some data file
+data/
+*.csv
+*.log
+drafts/
+*.txt
+*.xlsx
 *.srt
-subtitulos-es.csv
 *.json
+
+# Carpetas de Jupyter
+.ipynb_checkpoints/
+
+# environment files
+__pycache__/
+*.env
