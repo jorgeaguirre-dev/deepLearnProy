@@ -23,7 +23,25 @@ pip install wordcloud matplotlib
 
 pip install google-cloud-translate
 
+# Chequear nueva forma resumida:
+# Requisitos por gestor de paquetes
+
+## conda (recomendado)
+conda install -c conda-forge \
+    pandas spacy nltk matplotlib sklearn wordcloud
+
+# Para spacy: instalar modelo de idioma
+python -m spacy download en_core_web_sm
+
+# Para nltk: descargar recursos requeridos
+python -c "import nltk; nltk.download('vader_lexicon')"
+
+## pip (instalar estos paquetes que no están bien en conda)
+pip install textblob contractions google-cloud-translate
+python -m textblob.download_corpora
+
 ```
+
 ### Puntos Tratados en el desarrollo. ###
 El siguiente esquema sirve de mapa de los campos y tratamientos principales:
 ![alt text](NLP01_object_map.drawio.png)
