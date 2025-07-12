@@ -1,0 +1,12 @@
+#PIP requirements
+contractions
+google-cloud-translate
+nltk
+spacy
+textblob
+
+# Conda requirements
+matplotlib
+pandas
+sklearn
+wordcloud
