@@ -11,19 +11,6 @@ Se utiliza el guión (en idioma original) de la película: Jerry Maguire - 1996
 Es necesario instalar algunas librerías para poder ejecutar éste notebook aparte de las clásicas como pandas.
 
 ```python
-pip install spacy
-
-python -m spacy download en_core_web_sm
-
-pip install textblob
-
-python -m textblob.download_corpora
-
-pip install wordcloud matplotlib
-
-pip install google-cloud-translate
-
-# Chequear nueva forma resumida:
 # Requisitos por gestor de paquetes
 
 ## conda (recomendado)
@@ -36,7 +23,7 @@ python -m spacy download en_core_web_sm
 # Para nltk: descargar recursos requeridos
 python -c "import nltk; nltk.download('vader_lexicon')"
 
-## pip (instalar estos paquetes que no están bien en conda)
+## pip (instalar estos paquetes que no se recomienda tomar de conda)
 pip install textblob contractions google-cloud-translate
 python -m textblob.download_corpora
 
