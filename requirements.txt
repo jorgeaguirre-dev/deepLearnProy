@@ -1,12 +1,12 @@
 #PIP requirements
+textblob
 contractions
 google-cloud-translate
-nltk
-spacy
-textblob
 
 # Conda requirements
 matplotlib
 pandas
 sklearn
 wordcloud
+nltk
+spacy

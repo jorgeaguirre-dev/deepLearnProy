@@ -1,37 +1,35 @@
 # Deep Learning aplicado a un guión de película
 **Autor: Jorge Aguirre**
 
-![alt text](image-11.png)
+![alt text](img/image-11.png)
 
-Se utiliza el guión (en idioma original) de la película: Jerry Maguire - 1996
+## Descripción
+Este trabajo utiliza una fuente de datos, como lo es un guion de película, para realizar diversos análisis aplicando técnicas de Deep Learning. Específicamente NLP. Este análisis permite comprender profundamente el guión al identificar tendencias de sentimiento, frecuencias, positividad y negatividad en algunos pasajes y frases impactantes. Para finalizar una nube de palabras relevantes.
+
+Se utiliza el guión, en idioma original, de la película: Jerry Maguire - 1996
 
 - Se realiza la importación del archivo de subtítulos csv.
 
-### Instalar:
+### Instalar dependencias:
 Es necesario instalar algunas librerías para poder ejecutar éste notebook aparte de las clásicas como pandas.
 
 ```python
 # Requisitos por gestor de paquetes
+# Crear entorno con conda
+conda env create -f environment.yml
 
-## conda (recomendado)
-conda install -c conda-forge \
-    pandas spacy nltk matplotlib sklearn wordcloud
+# Activar entorno
+conda activate deep-learn-proy
 
-# Para spacy: instalar modelo de idioma
+# Descargar recursos adicionales
 python -m spacy download en_core_web_sm
-
-# Para nltk: descargar recursos requeridos
-python -c "import nltk; nltk.download('vader_lexicon')"
-
-## pip (instalar estos paquetes que no se recomienda tomar de conda)
-pip install textblob contractions google-cloud-translate
+python -m nltk.downloader vader_lexicon
 python -m textblob.download_corpora
-
 ```
 
 ### Puntos Tratados en el desarrollo. ###
 El siguiente esquema sirve de mapa de los campos y tratamientos principales:
-![alt text](NLP01_object_map.drawio.png)
+![alt text](img/NLP01_object_map.drawio.png)
 
 ## NLP
 
@@ -53,21 +51,21 @@ Genero una nueva columna 'sentimiento' a través de la evaluación mediante Text
 
 Me parece satisfactorio el análisis de sentimiento, en especial al compararlo con la versión anterior.
 
-![alt text](image.png)
+![alt text](img/image.png)
 
 ### Análisis de Sentimiento con VADER
 Buscando otro método que quizás me realice una mejor clasificación de sentimientos es que voy a probar VADER.
 
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 Parece capturar mejor el sentimiento dentro de los subtítulos.
 
 #### Top de Positivos y Negativos
 Subtítulos más positivos:
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 Subtítulos más negativos:
-![alt text](image-4.png)
+![alt text](img/image-4.png)
 
 La respuesta del modelo me parece satisfactoria.
 
@@ -80,23 +78,23 @@ Tomo el 'subtitulolimpio3' para realizar el presente análisis por tener los pro
 Se pueden obtener las:
 Palabras más relevantes:
 
-![alt text](image-4-1.png)
+![alt text](img/image-4-1.png)
 
 Podemos ver los subtítulos con mayor incidencia tfidf de sus palabras.
-![alt text](image-5.png)
+![alt text](img/image-5.png)
 
 ### Gráfica 1:
 Veamos la frecuencia con que aparecen los subtítulos según su **'tfidf_sum'**, que es la suma de TF-IDF para el subtítulo evaluado.
 
-![alt text](image-6.png)
+![alt text](img/image-6.png)
 
 Podemos separar subtítulos en rangos de TF-IDF y observar algunos para entender como se plasma esa diferencia en el índice. Lo siguiente es una muestra de algunos elementos de subtitulos altos:
 
-![alt text](image-7.png)
+![alt text](img/image-7.png)
 
 Mi interpretación es que un alto TF-IDF resulta para subtítulos con gran valor de contenido impactante. Son como fraces que podemos recordar y asociar a la película. Lo siguiente es una muestra de algunos elementos de subtitulos bajos:
 
-![alt text](image-8.png)
+![alt text](img/image-8.png)
 
 Para un bajo TF-IDF es todo lo contrario, en general son fraces menos impactantes.
 
@@ -104,8 +102,8 @@ Para un bajo TF-IDF es todo lo contrario, en general son fraces menos impactante
 En el siguiente gráfico se representa el eje x coincidente con el gráfico anterior pero en el se plasma la evaluación de sentimientos resultante.
 De ésta manera se puede tener una visión general de como se distribuye el sentimiento en toda la película.
 
-![alt text](image-9.png)
+![alt text](img/image-9.png)
 
 ### Nube de Palabras
 A partir de los subtítulos se puede generar la nube de palabras.
-![alt text](image-10.png)
+![alt text](img/image-10.png)
