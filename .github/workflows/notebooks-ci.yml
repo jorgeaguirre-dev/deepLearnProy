@@ -1,0 +1,37 @@
+name: Ejecutar Notebook con Conda
+
+on:
+  workflow_dispatch:
+#  push:
+#    branches: [ main ]
+#  pull_request:
+#    branches: [ main ]
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          python-version: 3.11
+          environment-file: environment.yml
+          activate-environment: deep-learn-proy
+          auto-activate-base: false
+
+      - name: Verificar dependencias
+        shell: bash -l {0}
+        run: |
+          conda info
+          conda list
+
+      - name: Ejecutar notebook
+        shell: bash -l {0}
+        run: |
+          jupyter nbconvert --to notebook --execute deepLearnProy.ipynb --output ejecutado-01.ipynb
+
