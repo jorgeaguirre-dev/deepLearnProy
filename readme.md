@@ -1,4 +1,7 @@
 # Deep Learning aplicado a un guión de película
+![Python >=3.11](https://img.shields.io/badge/python-%3E%3D3.11-blue.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+
 **Autor: Jorge Aguirre**
 
 ![alt text](img/image-11.png)
