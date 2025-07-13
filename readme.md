@@ -110,3 +110,9 @@ De ésta manera se puede tener una visión general de como se distribuye el sent
 ### Nube de Palabras
 A partir de los subtítulos se puede generar la nube de palabras.
 ![alt text](img/image-10.png)
+
+## 📄 License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+💡 For commercial inquiries or specific licensing questions, feel free to contact me.
